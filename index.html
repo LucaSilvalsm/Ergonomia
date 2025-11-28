@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErgoPause - Protótipo Final</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo ErgoPause">
+        </div>
+        <h1>ErgoPause</h1>
+        <p class="subtitle">Análise e Otimização de Sistemas • Protótipo NR-17</p>
+    </header>
+
+    <main>
+        <div class="timer-card">
+            <div id="initial-state">
+                <h3 style="margin-top:0;">Hora de focar?</h3>
+                <p class="timer-desc">Ative o timer e cuide da sua postura.</p>
+                <button class="btn-large" onclick="iniciarJornada()">INICIAR TIMER</button>
+            </div>
+
+            <div id="running-state" style="display:none;">
+                <p id="label-status" style="color:#888; font-size: 0.9rem; margin:0;">Tempo até a pausa</p>
+                <div id="timer-display">25:00</div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="barra-progresso"></div>
+                </div>
+                <div class="controls-container" id="controles">
+                    <button class="btn-control btn-pause" onclick="alternarPausa()" id="btn-pausa">⏸ Pausar</button>
+                    <button class="btn-control btn-restart" onclick="reiniciarTimer()">🔄 Reiniciar</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="content">
+
+            <div class="intro-nr17">
+                <h2 style="color: #2E7D32; margin-top:0;">O que diz a Norma Regulamentadora 17?</h2>
+                <p>A <strong>NR-17</strong> visa estabelecer parâmetros que permitam a adaptação das
+                    condições de trabalho às características psicofisiológicas dos trabalhadores. O objetivo é
+                    proporcionar o máximo de conforto, segurança e desempenho eficiente durante a jornada.
+                </p>
+                <p>Segundo a análise ergonômica, pausas regulares e o ajuste correto do mobiliário (mesa,
+                    cadeira e monitor) previnem lesões como LER/DORT e aumentam significativamente a produtividade e o
+                    bem-estar mental.</p>
+            </div>
+
+            <h2 class="section-title">Análise Comparativa de Postura</h2>
+
+            <div class="comparison-wrapper">
+
+                <div class="comparison-box correct-box">
+                    <div class="status-badge correct-badge">✅ CERTO</div>
+
+                    <div class="comparison-image">
+                        <img src="certo.png" alt="Postura Correta">
+                    </div>
+
+                    <h3>Ergonomia Ideal</h3>
+
+                    <div class="cards-grid internal-grid">
+                        <div class="card-item correct-card">
+                            <div class="icon-box">🖥️</div>
+                            <h4>Monitor</h4>
+                            <p>Topo na linha dos olhos.</p>
+                        </div>
+                        <div class="card-item correct-card">
+                            <div class="icon-box">🪑</div>
+                            <h4>Cadeira</h4>
+                            <p>Apoio lombar e rodízios.</p>
+                        </div>
+                        <div class="card-item correct-card">
+                            <div class="icon-box">💡</div>
+                            <h4>Luz</h4>
+                            <p>Paralela e sem reflexos.</p>
+                        </div>
+                        <div class="card-item correct-card">
+                            <div class="icon-box">⌨️</div>
+                            <h4>Teclado</h4>
+                            <p>Separado e com apoio.</p>
+                        </div>
+                        <div class="card-item correct-card">
+                            <div class="icon-box">🦶</div>
+                            <h4>Pés</h4>
+                            <p>100% apoiados no chão.</p>
+                        </div>
+                        <div class="card-item correct-card">
+                            <div class="icon-box">🧘</div>
+                            <h4>Ambiente</h4>
+                            <p>Neutro e silencioso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-box wrong-box">
+                    <div class="status-badge wrong-badge">❌ ERRADO</div>
+
+                    <div class="comparison-image">
+                        <img src="errado.png" alt="Postura Errada">
+                    </div>
+
+                    <h3>Risco à Saúde</h3>
+
+                    <div class="cards-grid internal-grid">
+                        <div class="card-item wrong-card">
+                            <div class="icon-box">🚫</div>
+                            <h4>Tela Ruim</h4>
+                            <p>Tensão cervical alta.</p>
+                        </div>
+                        <div class="card-item wrong-card">
+                            <div class="icon-box">🪵</div>
+                            <h4>Assento</h4>
+                            <p>Rígido e fixo.</p>
+                        </div>
+                        <div class="card-item wrong-card">
+                            <div class="icon-box">✨</div>
+                            <h4>Brilho</h4>
+                            <p>Ofuscamento visual.</p>
+                        </div>
+                        <div class="card-item wrong-card">
+                            <div class="icon-box">💪</div>
+                            <h4>Punhos</h4>
+                            <p>Sem apoio e tensos.</p>
+                        </div>
+                        <div class="card-item wrong-card">
+                            <div class="icon-box">🦵</div>
+                            <h4>Pernas</h4>
+                            <p>Penduradas/suspensas.</p>
+                        </div>
+                        <div class="card-item wrong-card">
+                            <div class="icon-box">🔊</div>
+                            <h4>Ruído</h4>
+                            <p>Ambiente estressante.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto de Extensão Universitária • 2025</p>
+        <p>Baseado na Análise Ergonômica do Trabalho</p>
+    </footer>
+
+    <div class="modal-overlay" id="alerta-modal">
+        <div class="modal-card">
+            <span class="modal-icon">🥤</span>
+            <h2 class="modal-title">Pausa Obrigatória!</h2>
+            <p style="color: #666; margin-bottom: 20px;">Cuide do seu corpo para manter o foco.</p>
+            
+            <ul class="checklist-modal">
+                <li>💧 <strong>Beba Água:</strong> Hidrate-se agora mesmo.</li>
+                <li>🙆 <strong>Alongue-se:</strong> Levante e estique os braços.</li>
+                <li>👀 <strong>Olhe para Longe:</strong> Descanse a visão por 20s.</li>
+                <li>🪑 <strong>Ajuste a Postura:</strong> Arrume as costas ao sentar.</li>
+            </ul>
+
+            <button class="btn-modal" onclick="fecharAlerta()">Já fiz minha pausa</button>
+        </div>
+    </div>
+    <audio id="som-notificacao" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.m4a"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
