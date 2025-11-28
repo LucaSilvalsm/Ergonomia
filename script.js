@@ -1,4 +1,4 @@
-const TEMPO_PADRAO = 3000; // 10 segundos para teste
+const TEMPO_PADRAO = 60; // 10 segundos para teste
 let tempoTotal = TEMPO_PADRAO;
 let tempoRestante = tempoTotal;
 let intervalo;
